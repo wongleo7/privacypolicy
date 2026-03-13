@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - DAS Symbol Linker</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 2px solid #1a73e8;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #202124;
+            margin-top: 30px;
+        }
+        .last-updated {
+            color: #5f6368;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        .highlight {
+            background: #e8f0fe;
+            padding: 15px;
+            border-left: 4px solid #1a73e8;
+            margin: 20px 0;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .contact {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Privacy Policy</h1>
+        <h3>DAS Symbol Linker Chrome Extension</h3>
+        <p class="last-updated">Last Updated: March 13, 2026</p>
+
+        <div class="highlight">
+            <strong>TL;DR:</strong> This extension does NOT collect, store, or transmit any personal data. Everything runs locally on your computer. No analytics, no tracking, no servers.
+        </div>
+
+        <h2>Overview</h2>
+        <p>DAS Symbol Linker is a privacy-focused Chrome extension that helps traders send stock symbols from web pages to their DAS Trader desktop application. This privacy policy explains what data the extension accesses and how it's used.</p>
+
+        <h2>Data Collection</h2>
+        <p><strong>We do NOT collect any data.</strong> Specifically:</p>
+        <ul>
+            <li>❌ No personal information</li>
+            <li>❌ No browsing history</li>
+            <li>❌ No stock symbols or trading data</li>
+            <li>❌ No analytics or usage tracking</li>
+            <li>❌ No cookies or identifiers</li>
+            <li>❌ No data sent to external servers</li>
+        </ul>
+
+        <h2>How the Extension Works</h2>
+
+        <h3>1. Local Storage (chrome.storage)</h3>
+        <p><strong>What's stored:</strong> User preferences only</p>
+        <ul>
+            <li>DAS Trader window title (e.g., "CenterPoint Pro")</li>
+            <li>Keyboard hotkey settings</li>
+        </ul>
+        <p><strong>Where it's stored:</strong> Locally in Chrome's storage (synced across your Chrome installations if you're signed in)</p>
+        <p><strong>Who can access it:</strong> Only you, on your devices</p>
+
+        <h3>2. Native Messaging (chrome.runtime.sendNativeMessage)</h3>
+        <p><strong>What's transmitted:</strong> Stock symbols (e.g., "AAPL", "TSLA")</p>
+        <p><strong>Where it's sent:</strong> Only to a local application running on YOUR computer (com.shortscanner.das_linker)</p>
+        <p><strong>Network transmission:</strong> None - all communication stays on your local machine</p>
+
+        <h3>3. Content Scripts</h3>
+        <p><strong>Active on:</strong> https://stock-news-feed.vercel.app only</p>
+        <p><strong>What it does:</strong></p>
+        <ul>
+            <li>Detects when you click stock symbols on the scanner page</li>
+            <li>Listens for messages from the web app</li>
+            <li>Shows local notifications when symbols are sent</li>
+        </ul>
+        <p><strong>What it does NOT do:</strong> Read, collect, or transmit any page content or personal data</p>
+
+        <h3>4. Context Menus</h3>
+        <p><strong>What it does:</strong> Allows you to right-click selected text and send it to DAS</p>
+        <p><strong>Data access:</strong> Only reads the text you explicitly select and right-click on</p>
+        <p><strong>Data retention:</strong> None - text is immediately processed and discarded</p>
+
+        <h2>Permissions Explained</h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background: #f8f9fa;">
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Permission</th>
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Why We Need It</th>
+                    <th style="padding: 10px; text-align: left; border-bottom: 2px solid #ddd;">Privacy Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;"><code>nativeMessaging</code></td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">Send symbols to DAS Trader desktop app</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">✅ Local only, no network</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;"><code>contextMenus</code></td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">Right-click to send symbols</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">✅ Only selected text, user-initiated</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;"><code>storage</code></td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">Save user settings</td>
+                    <td style="padding: 10px; border-bottom: 1px solid #eee;">✅ Local only, user preferences</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;"><code>host_permissions</code></td>
+                    <td style="padding: 10px;">Detect symbol clicks on scanner</td>
+                    <td style="padding: 10px;">✅ Single domain, no data extraction</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Third-Party Services</h2>
+        <p><strong>None.</strong> This extension does not use any third-party services, APIs, analytics, or tracking tools.</p>
+
+        <h2>Data Sharing</h2>
+        <p><strong>None.</strong> We do not share any data because we don't collect any data.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>This extension is not directed at children under 13 and does not knowingly collect any information from children.</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+
+        <h2>Open Source</h2>
+        <p>This extension's source code is transparent and can be audited. You can verify that it does exactly what we claim:</p>
+        <ul>
+            <li>No external network requests</li>
+            <li>No data collection code</li>
+            <li>No analytics or tracking libraries</li>
+        </ul>
+
+        <h2>Your Rights</h2>
+        <p>Since we don't collect any data, there's nothing to:</p>
+        <ul>
+            <li>Access (no data stored)</li>
+            <li>Delete (no data collected)</li>
+            <li>Export (no data retained)</li>
+            <li>Opt-out of (no tracking enabled)</li>
+        </ul>
+
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have questions about this privacy policy or the extension:</p>
+            <p>
+                <strong>GitHub:</strong> <a href="https://github.com/wongleo7/short-scanner">github.com/wongleo7/short-scanner</a><br>
+                <strong>Issues:</strong> <a href="https://github.com/wongleo7/short-scanner/issues">Report an issue</a>
+            </p>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #ddd;">
+
+        <p style="text-align: center; color: #5f6368; font-size: 14px;">
+            DAS Symbol Linker is an independent project and is not affiliated with, endorsed by, or associated with DAS Trader LLC.
+        </p>
+    </div>
+</body>
+</html>
